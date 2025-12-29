@@ -53,18 +53,20 @@
   </div>
 
   <div class="grid">
-    <button onclick="topUp(5)">R5</button>
-    <button onclick="topUp(10)">R10</button>
-    <button onclick="topUp(15)">R15</button>
-    <button onclick="topUp(20)">R20</button>
-  </div>
+   <div class="grid">
+  <button id="topup5">R5</button>
+  <button id="topup10">R10</button>
+  <button id="topup15">R15</button>
+  <button id="topup20">R20</button>
+</div>
 
-  <br>
+<br>
 
-  <div>
-    LIVES: <span id="lives">0</span>
-  </div>
-  <div class="heart" onclick="buyLife()">♥</div>
+<div>
+  LIVES: <span id="lives">0</span>
+</div>
+<div class="heart" id="buyLife">♥</div>
+
 </div>
 
 <script type="module" src="wallet.js"></script>
