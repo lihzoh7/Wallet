@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wallet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { margin:0; font-family:Arial; background:#c9f7c9; }
+    .container { max-width:600px; margin:auto; padding:20px; }
+    .box { background:#fff; padding:15px; margin-bottom:15px; border-radius:10px; }
+    .navy { background:#001f3f; color:#fff; }
+    .grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
+    button { padding:12px; font-size:16px; border:none; border-radius:8px; cursor:pointer; }
+    .heart { font-size:48px; cursor:pointer; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="box navy">
+    <h3>WINNINGS</h3>
+    <div id="winnings">R0</div>
+  </div>
+
+  <div class="box">
+    <h3>BALANCE</h3>
+    <div id="balance">R0</div>
+  </div>
+
+  <div class="box grid">
+    <button onclick="topUp(5)">R5</button>
+    <button onclick="topUp(10)">R10</button>
+    <button onclick="topUp(15)">R15</button>
+    <button onclick="topUp(20)">R20</button>
+  </div>
+
+  <div class="box">
+    <h3>LIVES</h3>
+    <div>
+      <span id="lives">0</span> ♥
+    </div>
+    <div class="heart" onclick="buyLife()">♥</div>
+    <small>50 cents per life (max 5)</small>
+  </div>
+
+  <div class="box" id="claimBox"></div>
+</div>
+
+<script src="firebase.js"></script>
+<script src="wallet.js"></script>
+</body>
+</html>
