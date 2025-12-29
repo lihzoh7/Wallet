@@ -27,17 +27,30 @@ function listenWallet() {
   });
 }
 
-window.topUp = function (amount) {
-  const links = {
-    5: "https://payf.st/pviof",
-    10: "https://payf.st/7d4zb",
-    15: "https://payf.st/7yw30",
-    20: "https://payf.st/2564l"
-  };
-  window.location.href = links[amount];
+const payfastLinks = {
+  5: "https://payf.st/pviof",
+  10: "https://payf.st/7d4zb",
+  15: "https://payf.st/7yw30",
+  20: "https://payf.st/2564l"
 };
 
-window.buyLife = async function () {
+document.getElementById("topup5").addEventListener("click", () => {
+  window.location.href = payfastLinks[5];
+});
+
+document.getElementById("topup10").addEventListener("click", () => {
+  window.location.href = payfastLinks[10];
+});
+
+document.getElementById("topup15").addEventListener("click", () => {
+  window.location.href = payfastLinks[15];
+});
+
+document.getElementById("topup20").addEventListener("click", () => {
+  window.location.href = payfastLinks[20];
+});
+
+document.getElementById("buyLife").addEventListener("click", async () => {
   const walletRef = ref(db, `players/${uid}/wallet`);
   const livesRef = ref(db, `players/${uid}/lives`);
 
@@ -59,4 +72,4 @@ window.buyLife = async function () {
 
   await runTransaction(walletRef, val => (val || 0) - 0.5);
   await runTransaction(livesRef, val => (val || 0) + 1);
-};
+});
